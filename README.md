@@ -1,3 +1,17 @@
+原作者其实有[Worker版本](https://github.com/qinlili23333/ctfile.Workers)，但是部署完出错了。。。
+```
+SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at fileToLink (worker.js:63:22)
+    at async handleRequest (worker.js:17:20)
+```
+所以这里直接用[redirect.html](https://github.com/qinlili23333/ctfileGet/blob/main/redirect.html)改了一个。
+
+示例：[https://ctget.sunbangyan.cn/?file=36179368-727549407-294018&pass=1416](https://ctget.sunbangyan.cn/?file=36179368-727549407-294018&pass=1416)
+
+
+以下为原Readme
+------------
 # ctfileGet
 获取城通网盘一次性直连地址
 
