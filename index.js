@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+const html = `<!DOCTYPE html>
 <html>
 <title>城通网盘动态解析</title>
 
@@ -7,11 +7,11 @@
     <link rel="canonical" href="https://ctfile.qinlili.bid/redirect.html" />
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-    <link rel="manifest" href="./manifest.json">
+    <link rel="manifest" href="https://cdn.jsdelivr.net/gh/Sunbangyan233/ctGetforWorker@main/manifest.json">
     <meta name="robots" content="noindex">
     <meta name="theme-color" content="#FFFFFF">
     <link rel="icon" href="./icon.png">
-    <script src="./ctget.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Sunbangyan233/ctGetforWorker@main/ctget.js"></script>
 </head>
 
 <body id="container" style="width:100%;height:100%;">
@@ -83,7 +83,7 @@
     };
     const searchParams = new URLSearchParams(document.location.search);
     const fileid = searchParams.get("file");
-    var password = "547873715"
+    var password = "1416"
     if (searchParams.get("pass")) {
         password = searchParams.get("pass")
     }
@@ -99,4 +99,16 @@
     dl();
 </script>
 
-</html>
+</html>`;
+
+async function handleRequest(request) {
+  return new Response(html, {
+    headers: {
+      'content-type': 'text/html;charset=UTF-8',
+    },
+  });
+}
+
+addEventListener('fetch', event => {
+  return event.respondWith(handleRequest(event.request));
+});
